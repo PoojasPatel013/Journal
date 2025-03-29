@@ -1,24 +1,135 @@
-/* You can add global styles to this file, and also import other style files */
+/* Global styles */
+:root {
+  --app-font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  --app-font-size: medium;
+}
+
 * {
   box-sizing: border-box;
+}
+
+body {
+  font-family: var(--app-font-family);
+  font-size: var(--app-font-size);
+  line-height: 1.6;
+  color: #333;
+  background-color: #f8f9fa;
   margin: 0;
   padding: 0;
 }
 
-body {
-  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-  line-height: 1.6;
-  color: #333;
-  background-color: #f5f5f5;
-}
-
-button {
-  cursor: pointer;
-}
-
-input,
-textarea,
 button {
   font-family: inherit;
+}
+
+/* Dark theme */
+body.dark-theme {
+  background-color: #222;
+  color: #f0f0f0;
+}
+
+.dark-theme h1,
+.dark-theme h2,
+.dark-theme h3,
+.dark-theme h4,
+.dark-theme h5,
+.dark-theme h6 {
+  color: #f0f0f0;
+}
+
+.dark-theme .journal-form-container,
+.dark-theme .mood-chart-container,
+.dark-theme .journal-list-container,
+.dark-theme .settings-container,
+.dark-theme .calendar-container,
+.dark-theme .search-filter-container {
+  background-color: #333;
+  color: #f0f0f0;
+  border-color: #444;
+}
+
+.dark-theme input,
+.dark-theme textarea,
+.dark-theme select,
+.dark-theme .editor-content {
+  background-color: #444;
+  color: #f0f0f0;
+  border-color: #555;
+}
+
+.dark-theme .mood-button {
+  border-color: #555;
+}
+
+.dark-theme .mood-button.selected {
+  border-color: #0069d9;
+  background-color: #0d3a63;
+}
+
+.dark-theme .toolbar,
+.dark-theme .editor-footer {
+  background-color: #444;
+  border-color: #555;
+}
+
+.dark-theme .tag-item,
+.dark-theme .activity-tag,
+.dark-theme .tag {
+  background-color: #444;
+  color: #ddd;
+}
+
+.dark-theme .entry-card,
+.dark-theme .result-item,
+.dark-theme .entry-item,
+.dark-theme .day {
+  border-color: #444;
+}
+
+.dark-theme .entry-card:hover,
+.dark-theme .result-item:hover {
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
+}
+
+.dark-theme .writing-prompt,
+.dark-theme .gratitude-section {
+  background-color: #3a3a3a;
+  border-color: #555;
+}
+
+.dark-theme .no-entries,
+.dark-theme .no-results,
+.dark-theme .no-data {
+  color: #aaa;
+}
+
+/* Add a bit of custom scrollbar styling */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #ccc;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #aaa;
+}
+
+.dark-theme ::-webkit-scrollbar-track {
+  background: #333;
+}
+
+.dark-theme ::-webkit-scrollbar-thumb {
+  background: #666;
+}
+
+.dark-theme ::-webkit-scrollbar-thumb:hover {
+  background: #888;
 }
 

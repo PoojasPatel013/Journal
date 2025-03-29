@@ -22,7 +22,8 @@ import { JournalService } from '../../services/journal.service';
         <div *ngFor="let entry of entries" class="entry-card">
           <div class="entry-header">
             <div class="entry-date-mood">
-              <span class="entry-date">{{ formatDate(entry.date) }}</span>
+            <span class="entry-date">{{ formatDate(entry.date) }}</span>
+
               <span class="entry-mood">{{ getMoodEmoji(entry.mood) }}</span>
             </div>
             <button class="btn-delete" (click)="deleteEntry(entry.id)">×</button>
@@ -150,8 +151,10 @@ export class JournalListComponent {
   
   constructor(private journalService: JournalService) {}
   
-  formatDate(dateString: string): string {
-    const date = new Date(dateString);
+  formatDate(dateInput: string | Date | null | undefined): string {
+    if (!dateInput) return 'Invalid Date';
+    
+    const date = dateInput instanceof Date ? dateInput : new Date(dateInput);
     return date.toLocaleDateString('en-US', {
       weekday: 'short',
       year: 'numeric',
@@ -159,6 +162,7 @@ export class JournalListComponent {
       day: 'numeric'
     });
   }
+  
   
   getMoodEmoji(mood: string): string {
     return this.journalService.getMoodEmoji(mood);
